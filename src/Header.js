@@ -12,7 +12,6 @@ function Header() {
         <PersonIcon className="header_icon" fontSize="large" />
       </IconButton>
       <IconButton>
-        {' '}
         <img
           className="header-logo"
           src="https://www.pngfind.com/pngs/m/13-131073_this-post-is-a-part-of-tinder-logo.png"
