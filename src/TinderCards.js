@@ -3,27 +3,12 @@ import TinderCard from 'react-tinder-card';
 import './CardStyle.css';
 import db from './firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
-// const data = [
-//   {
-//     name: 'jack',
-//     url: 'https://faroutmagazine.co.uk/static/uploads/2022/03/Titanic-Jack-1.jpg',
-//   },
-//   {
-//     name: 'jenifer',
-//     url: 'https://media.vanityfair.com/photos/618c0614fdf674f0522a9fb7/master/pass/LBY_210805_JENNIFER_LAWRENCE_VF_09G_Shot_10_028_QC_sRGB_LR.jpg',
-//   },
-//   {
-//     name: 'mike',
-//     url: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Mike_Tyson_2019_by_Glenn_Francis.jpg',
-//   },
-// ];
 
 function TinderCards() {
   const [people, setPeople] = useState([]);
 
-
   useEffect(() => {
-    onSnapshot(
+    const unsubscribe = onSnapshot(
       collection(db, 'people'),
       (snapShot) => {
         setPeople(snapShot.docs.map((doc) => doc.data()));
@@ -32,9 +17,10 @@ function TinderCards() {
         throw error;
       }
     );
+    return () => {
+      unsubscribe();
+    };
   }, []);
-
-  console.log(people);
 
   return (
     <div>
