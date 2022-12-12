@@ -24,7 +24,6 @@ function TinderCards() {
 
   return (
     <div>
-      <h1>TinderCard</h1>
       <div className="tinderCards__cardContainer">
         {people.map((person) => (
           <TinderCard
@@ -46,19 +45,3 @@ function TinderCards() {
 }
 
 export default TinderCards;
-// setPeople(data);
-// console.log(people, 'innnnnnnn');
-
-// const peopleCollectionRef = db.collection('people').get();
-// console.log(peopleCollectionRef);
-
-// console.log(peopleCollectionRef);
-// useEffect(() => {
-//   const getPeople = async () => {
-//     const data = await getDoc(peopleCollectionRef);
-//     console.log(data.Doc);
-//     setPeople(data.Doc.map((doc) => ({ ...doc.data(), id: doc.id })));
-//     console.log(data.Doc);
-//   };
-//   getPeople();
-// }, []);
