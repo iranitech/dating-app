@@ -19,3 +19,7 @@
 .chat_timestemp {
   color: lightgray;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}

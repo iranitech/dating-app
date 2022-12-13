@@ -9,7 +9,7 @@ function Header({ backButton }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/', { replace: true });
+    navigate(`${backButton}`, { replace: true });
   };
 
   return (
